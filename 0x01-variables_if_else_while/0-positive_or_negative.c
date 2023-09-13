@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
- * main - this is the main function of the program
+ * main - this is the main function
  *
- * Description: the main function prints a number to the console.
+ * Description : the main function prints numbers to the console
  *
  * Return: always 0
  */
-
 int	main(void)
 {
 	int	n;
@@ -17,17 +17,11 @@ int	main(void)
 	n = rand() - RAND_MAX / 2;
 
 	if (n > 0)
-	{
-		printf("is positive\n");
-	}
-	if (n == 0)
-	{
-		printf("is zero\n");
-	}
-	if (n < 0)
-	{
-		printf("is negative");
-	}
-		printf("%d", n);
+		printf("%i is positive\n", n);
+	else if (n == 0)
+		printf("%i is zero\n", n);
+	else
+		printf("%i is negative\n", n);
 	return (0);
 }
+
