@@ -1,34 +1,48 @@
 #include <stdio.h>
 
 /**
- * main - entry point
+ * main - Entry point of the program
  *
- * Description: putchar prints a combination of two numbers
+ * Description: putchar prints numbers
  *
- * Return: always 0
+ * Return: 0 on success
  */
-int	main(void)
+int main(void)
 {
-	int i,	j;
+	int i, j;
 
 	for (i = 0; i <= 99; i++)
 	{
-		for (j = i; j <= 99; j++)
-		{
-			putchar('0' + (i / 10));
-			putchar('0' + (i % 10));
-			putchar(' ');
-			putchar('0' + (j / 10));
-			putchar('0' + (j % 10));
+	for (j = i + 1; j <= 99; j++)
+	{
+		int tens1 = i / 10;
+		int ones1 = i % 10;
+		int tens2 = j / 10;
+		int ones2 = j % 10;
 
-			if (i != 98 || j != 99)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+		if (tens1 == 0)
+			putchar('0');
+		else
+			putchar('0' + tens1);
+
+		putchar('0' + ones1);
+		putchar(' ');
+
+		if (tens2 == 0)
+			putchar('0');
+		else
+			putchar('0' + tens2);
+
+		putchar('0' + ones2);
+
+		if (i != 99 || j != 99)
+		{
+			putchar(',');
+			putchar(' ');
 		}
 	}
+	}
 
-	putchar('\n');
 	return (0);
+
 }
