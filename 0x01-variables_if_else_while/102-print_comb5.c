@@ -1,36 +1,39 @@
 #include <stdio.h>
 
 /**
- * main - Entry point of the program
+ * main - entry point
  *
- * Return: 0 on success
+ * Description: putchar prints numbers
+ *
+ * Return: always 0
  */
 int	main(void)
 {
-	int	i,	j;
+	int	firstDigit	=	0,	seconDigit;
 
-	for (i = 0; i <= 99; i++)
+	while (firstDigit <= 99)
 	{
-	for (j = i + 1; j <= 99; j++)
-	{
-		int tens1 = i / 10;
-		int ones1 = i % 10;
-		int tens2 = j / 10;
-		int ones2 = j % 10;
-
-		putchar((tens1 == 0) ? '0' : '0' + tens1);
-		putchar('0' + ones1);
-		putchar(' ');
-		putchar((tens2 == 0) ? '0' : '0' + tens2);
-		putchar('0' + ones2);
-
-		if (i != 99 || j != 99)
+		seconDigit	=	firstDigit;
+		while (seconDigit <= 99)
 		{
-			putchar(',');
-			putchar(' ');
-		}
-		}
-		}
+			if (seconDigit != firstDigit)
+			{
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
+				putchar(' ');
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
 
-		return (0);
+				if (firstDigit != 98 || seconDigit != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+			seconDigit++;
+		}
+		firstDigit++;
+	}
+	putchar('\n');
+	return (0);
 }
