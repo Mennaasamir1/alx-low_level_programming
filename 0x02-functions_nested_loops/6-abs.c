@@ -1,7 +1,8 @@
 #include <main.h>
 
 /**
- * _abs - function that computes the abolute value of an integer
+ * _abs - function that computes the abolute
+ *		value of an integer
  *
  * @n: takes in integer type input for function
  *
