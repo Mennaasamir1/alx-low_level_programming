@@ -3,13 +3,11 @@
 /**
  * main - Entry point of the program
  *
- * Description: putchar prints numbers
- *
  * Return: 0 on success
  */
-int main(void)
+int	main(void)
 {
-	int i, j;
+	int	i,	j;
 
 	for (i = 0; i <= 99; i++)
 	{
@@ -20,19 +18,10 @@ int main(void)
 		int tens2 = j / 10;
 		int ones2 = j % 10;
 
-		if (tens1 == 0)
-			putchar('0');
-		else
-			putchar('0' + tens1);
-
+		putchar((tens1 == 0) ? '0' : '0' + tens1);
 		putchar('0' + ones1);
 		putchar(' ');
-
-		if (tens2 == 0)
-			putchar('0');
-		else
-			putchar('0' + tens2);
-
+		putchar((tens2 == 0) ? '0' : '0' + tens2);
 		putchar('0' + ones2);
 
 		if (i != 99 || j != 99)
@@ -40,9 +29,8 @@ int main(void)
 			putchar(',');
 			putchar(' ');
 		}
-	}
-	}
+		}
+		}
 
-	return (0);
-
+		return (0);
 }
