@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
 * multiply - Multiplies two integers
@@ -10,12 +9,5 @@
 */
 int	multiply(int a, int b)
 {
-	int	product = 0;
-
-	while (b > 0)
-	{
-		product += a;
-		b--;
-	}
-	return (product);
+	return (a * b);
 }
