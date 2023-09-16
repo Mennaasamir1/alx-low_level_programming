@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
 * multiply - Multiplies two integers
 * @a: The first integer
@@ -9,8 +10,12 @@
 */
 int	multiply(int a, int b)
 {
-	return (a * b);
+	int	product = 0;
 
-	int result = multiply(5, 7);
-	printf("Result: %d\n", result); // Output: Result: 35
+	while (b > 0)
+	{
+		product += a;
+		b--;
+	}
+	return (product);
 }
