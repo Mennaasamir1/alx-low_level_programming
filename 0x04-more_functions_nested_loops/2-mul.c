@@ -1,4 +1,5 @@
 #include "main.h"
+#include "stdio.h"
 
 /**
 * multiply - Multiplies two integers
