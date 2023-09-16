@@ -10,4 +10,7 @@
 int	multiply(int a, int b)
 {
 	return (a * b);
+
+	int result = multiply(5, 7);
+	printf("Result: %d\n", result); // Output: Result: 35
 }
