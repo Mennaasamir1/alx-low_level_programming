@@ -8,22 +8,26 @@
 
 int	main(void)
 {
-	int	x,	n;
+	int	a	=	0;
 
-	x	=	0;
-	n	=	'a';
-
-	while (x <= 10)
+	while (a <= 9)
 	{
-		putchar(x + '0');
-		x++;
+		putchar(a + '0');
+		a++;
 	}
 
-	while (n <= 'f')
+	a	=	'a';
+
+	while (a <= 'f')
 	{
-		putchar(n);
-		n++;
+		putchar(a);
+		a++;
 	}
+
+
+
+
+
 
 	return (0);
 }
