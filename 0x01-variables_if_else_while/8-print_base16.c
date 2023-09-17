@@ -1,25 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - entry point
- *
- * Description: main
+ * main - entry point of the program
  *
  * Return: always 0
  */
+
 int	main(void)
 {
-	int	digit	=	48;
+	int	x,	n;
 
-	while (digit <= 102)
+	x	=	0;
+	n	=	'a';
+
+	while (x <= 10)
 	{
-		putchar(digit);
-
-		if (digit == 57)
-		{
-			digit + 39;
-		digit++;
+		putchar(x + '0');
+		x++;
 	}
-	putchar('\n');
+
+	while (n <= 'f')
+	{
+		putchar(n);
+		n++;
+	}
+
 	return (0);
 }
