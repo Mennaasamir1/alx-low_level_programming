@@ -8,26 +8,21 @@
 
 int	main(void)
 {
-	int	a	=	0;
-
-	while (a <= 9)
+	int	num	=	48;
+	
+	while (num <= 102)
 	{
-		putchar(a + '0');
-		a++;
+		putchar(num);
+
+		if (num <= 57)
+		{
+			num += 39;
+		}
+
+		num++;
 	}
 
-	a	=	'a';
-
-	while (a <= 'f')
-	{
-		putchar(a);
-		a++;
-	}
-
-
-
-
-
+	putchar('\n');
 
 	return (0);
 }
