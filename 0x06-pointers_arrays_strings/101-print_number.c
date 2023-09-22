@@ -1,5 +1,4 @@
 #include "main.h"
-#include "_putchar.c"
 /**
  * print_number - print numbers chars
  * @n: integer params
