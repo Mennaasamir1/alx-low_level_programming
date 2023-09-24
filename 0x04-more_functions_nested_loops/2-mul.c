@@ -1,14 +1,17 @@
 #include "main.h"
-#include "stdio.h"
 
 /**
-* multiply - Multiplies two integers
-* @a: The first integer
-* @b: The second integer
-*
-* Return: The product of a and b
-*/
-int	multiply(int a, int b)
+ * mul - function that prints the multiplication of two numbers
+ * @a: first integer
+ * @b: second integer
+ * Return: result
+ */
+
+int mul(int a, int b)
 {
-	return (a * b);
+	int	result;
+
+	result = a * b;
+
+	return (result);
 }
