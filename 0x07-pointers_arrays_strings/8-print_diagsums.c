@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_diagsums - prints the sum of the two diagonals
- * @a: pointer
+ * @a: second arrayi
  * @size: size of array
  * Return: void
  */
@@ -18,7 +18,7 @@ void print_diagsums(int *a, int size)
 		a += size;
 	}
 
-	printf("%d ", c1);
+	printf("%d, ", c1);
 	printf("%d\n", c2);
 
 }
