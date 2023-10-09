@@ -2,6 +2,7 @@
 #include <string.h>
  /**
   * is_palindrome_recur - function  checks if a string
+  *
   * is palindrome recursively
   * @s: pointer to string
   * @start: starting point
