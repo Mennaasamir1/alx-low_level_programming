@@ -11,5 +11,5 @@ int _strlen_recursion(char *s);
   int _sqrt_recursion(int n);
   int is_prime_number(int n);
   int is_palindrome(char *s);
-  int is_palindrome_rec(char *s, int start, int end);
+  int is_palindrome_recur(char *s, int start, int end);
 #endif
