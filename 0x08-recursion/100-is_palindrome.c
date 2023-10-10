@@ -1,8 +1,8 @@
 #include "main.h"
 #include <string.h>
  /**
-  * is_palindrome_recur - function  checks if a string
-  *
+  * _checker - function
+  * Description: function that checks if string is palindrome
   * is palindrome recursively
   * @s: pointer to string
   * @start: starting point
@@ -10,7 +10,7 @@
   *
   * Return: 1 if string is palindrome, 0 if otherwise
   */
-int is_palindrome_recur(char *s, int start, int end)
+int _checker(char *s, int start, int end)
 {
 	/* base case: empty string or single character is palindrome */
 	if (start >= end)
@@ -21,7 +21,7 @@ int is_palindrome_recur(char *s, int start, int end)
 	/* recursive case: checks if start and end characters match */
 	if (s[start] == s[end])
 	{
-		return (is_palindrome_recur(s, start + 1, end - 1));
+		return (_checker(s, start + 1, end - 1));
 	}
 
 	else
@@ -38,5 +38,5 @@ int is_palindrome(char *s)
 {
 	int len = strlen(s);
 
-	return (is_palindrome_recur(s, 0, len - 1));
+	return (_checker(s, 0, len - 1));
 }
