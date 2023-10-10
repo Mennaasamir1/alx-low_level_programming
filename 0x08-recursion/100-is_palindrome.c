@@ -1,14 +1,12 @@
 #include "main.h"
 #include <string.h>
+
  /**
-  * _checker - function that checks for palindrome
-  * Description: function that checks if string
-  * is palindrome recursively
-  * @s: pointer to string
+  * _checker -  checks for palindrome
+  * @s: string
   * @start: starting point
   * @end: ending point
-  *
-  * Return: 1 if string is palindrome, 0 if otherwise
+  * Return: 1 or 0
   */
 int _checker(char *s, int start, int end)
 {
