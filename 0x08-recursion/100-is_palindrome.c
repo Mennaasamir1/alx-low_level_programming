@@ -1,8 +1,8 @@
 #include "main.h"
 #include <string.h>
  /**
-  *_checker - function
-  * Description: function that checks if string is palindrome
+  * _checker - function that checks for palindrome
+  * Description: function that checks if string
   * is palindrome recursively
   * @s: pointer to string
   * @start: starting point
