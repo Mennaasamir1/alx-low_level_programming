@@ -1,22 +1,23 @@
 #include "main.h"
 #include <string.h>
 
- /**
-  * _checker -  checks for palindrome
-  * @s: string
-  * @start: starting point
-  * @end: ending point
-  * Return: 1 or 0
-  */
+/**
+ * _checker - checks if a string is palindrome or
+ * not recursively
+ *
+ * @s: string to check
+ * @start: the starting index of the substring
+ * @end: the ending index of the substring
+ *
+ * Return: 1 if the substring is palindrome, 0 otherwise.
+ */
 int _checker(char *s, int start, int end)
 {
-	/* base case: empty string or single character is palindrome */
 	if (start >= end)
 	{
 		return (1);
 	}
 
-	/* recursive case: checks if start and end characters match */
 	if (s[start] == s[end])
 	{
 		return (_checker(s, start + 1, end - 1));
