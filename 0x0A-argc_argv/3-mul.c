@@ -3,8 +3,8 @@
 
 /**
  * main - entry point
- * @argc: argument c
- * @argv: argument v
+ * @argc: argument counter
+ * @argv: pointer to an array of strings
  * Return: 0
  */
 int main(int argc, char *argv[])
