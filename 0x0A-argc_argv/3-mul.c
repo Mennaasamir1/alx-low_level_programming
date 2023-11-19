@@ -9,24 +9,25 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, mult, first, second;
+	int first, second;
+	int mult;
 
-	if (argc != 3)
+	first = atoi(argv[1]);
+	second = atoi(argv[2]);
+
+	if (argc == 3)
+	{
+		mult = first * second;
+
+		printf("%d\n", mult);
+	}
+
+	else
 	{
 		printf("Error\n");
 
 		return (1);
 	}
-
-	first = atoi(argv[1]);
-	second = atoi(argv[2]);
-
-	for (i = first; i < argc; i++)
-	{
-		mult = first * second;
-	}
-
-	printf("%d\n", mult);
 
 	return (0);
 }
