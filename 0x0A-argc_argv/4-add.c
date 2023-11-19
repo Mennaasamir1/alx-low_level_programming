@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ * main - entry point
+ * @argc: argument counter
+ * @argv: vector
+ * Return: 0
+ */
 int main(int argc, char *argv[])
 {
 	int sum = 0;
