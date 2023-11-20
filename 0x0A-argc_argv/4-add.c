@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
  * main - entry point
  * @argc: argument counter
@@ -8,24 +9,31 @@
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0;
-	char *p;
+	int sum = 0, i;
+	char *arg;
 
-	while (--argc)
+	if (argc < 2)
 	{
-		for (p = argv[argc] ; *p; p++)
+		printf("0\n");
+		return (0);
+	}
+
+	for (i = 1; i < argc; i++)
+	{
+		arg = argv[i];
+
+		while (*arg != '\0')
 		{
-			if (*p < '0' || *p > '9')
+			if (!isdigit(*arg))
 			{
-				return (printf("Error\n"), 1);
+				printf("Error\n");
+				return (1);
 			}
-
-			sum += atoi(argv[argc]);
+			arg++;
 		}
-
+		sum += atoi(argv[i]);
 	}
 
 	printf("%d\n", sum);
-
 	return (0);
 }
