@@ -20,14 +20,12 @@ char *_strdup(char *str)
 	length = strlen(str);
 
 	ptr = (char *)malloc(sizeof(char) * (length + 1));
-
-	if (ptr == NULL)
-		return (NULL);
-
 	ptr = strdup(str);
-
-
 	return (ptr);
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
 	free(ptr);
 	ptr = NULL;
 
