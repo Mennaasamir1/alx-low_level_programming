@@ -9,7 +9,7 @@
  */
 char *_strdup(char *str)
 {
-	int length;
+	int length, i;
 	char *ptr;
 
 	if (str == NULL)
@@ -20,14 +20,17 @@ char *_strdup(char *str)
 	length = strlen(str);
 
 	ptr = (char *)malloc(length + 1);
-	ptr = strdup(str);
-	return (ptr);
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	free(ptr);
-	ptr = NULL;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		ptr[i] = str[i];
+	}
+
+	return (ptr);
 
 
 }
