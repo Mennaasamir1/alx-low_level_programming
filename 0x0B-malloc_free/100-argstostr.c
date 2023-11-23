@@ -1,10 +1,17 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * *argstostr - conacatenates two strings
+ * @ac: argument counter
+ * @av: pointer to an array of pointers
+ * Return: pointer
+ */
+
 char *argstostr(int ac, char **av)
 {
-	int len = 0, i, j, k;
-	char *s;
+	int i, j, k = 0, length = 0;
+	char *ptr;
 
 	if (ac == 0 || av == NULL)
 	{
@@ -13,27 +20,34 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		for (j = 0; av[i][j]; j++)
 		{
-			len++;
-
-			len++;
+			length++;
 		}
+		length++;
 	}
 
-	s = (char *)malloc(sizeof(char) * (ac + len + 1));
+	ptr = (char *)malloc(sizeof(char) * ac + length + 1);
+
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		for (j = 0; av[i][j]; j++)
 		{
-			s[k] = av[i][j];
+			ptr[k] = av[i][j];
 			k++;
 		}
-		s[k] = '\n';
+
+		ptr[k] = '\n';
+		k++;
 	}
 
-	s[k] = '\0';
+	ptr[k] = '\0';
 
-	return (s);
+	return (ptr);
+
 }
