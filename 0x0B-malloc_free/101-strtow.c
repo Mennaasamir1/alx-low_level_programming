@@ -1,7 +1,6 @@
 #include "main.h"
 #include <string.h>
 #include <stdlib.h>
-int word_count(char *str);
 /**
  * word_count - counts substrings
  * @str: pointer to string
@@ -9,74 +8,66 @@ int word_count(char *str);
  */
 int word_count(char *str)
 {
-	int count = 0, i, len;
-	int word_start = 0;
+	int i, count = 0;
 
-	len = strlen(str);
-
-	for (i = 0; i < len; i++)
+	for (i = 0; str[i]; i++)
 	{
-		if (str[i] != ' ' && !word_start)
+		if (str[i] == ' ')
 		{
-			word_start = 1;
-			count++;
-		}
-
-		else if (str[i] == ' ')
-		{
-			word_start = 0;
+			if (str[i + 1] !=  ' ' && str[i + 1] != '\0')
+				count++;
+			else if (i == 0)
+				count++;
 		}
 	}
+	count++;
 	return (count);
 }
 /**
- * **strtow - split the string into words
+ * **strtow -  splits a string into words
  * @str: pointer to string
- * Return: pointer or NULL if fails
+ * Return: pointer or null
  */
 char **strtow(char *str)
 {
-	int wordCount, i, j, k = 0;
-	int word_length = 0, word_start = 0, len;
-	char **words;
+	int i, j, k, l, n = 0, wc = 0;
+	char **w;
 
 	if (str == NULL || *str == '\0')
-	{
 		return (NULL);
-	}
-
-	wordCount = word_count(str);
-	words = malloc(sizeof(char *) * (wordCount + 1));
-	if (words == NULL)
+	n = word_count(str);
+	if (n == 1)
 		return (NULL);
-
-	len = strlen(str);
-
-	for (i = 0; i < len; i++)
+	w = (char **)malloc(sizeof(char *) * n);
+	if (w == NULL)
+		return (NULL);
+	w[n - 1] = NULL;
+	i = 0;
+	while (str[i])
 	{
-		if (str[i] != ' ' && !word_start)
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 		{
-			word_start = 1;
-			word_length = 1;
-		}
-		else if (str[i] != ' ')
-			word_length++;
-		if ((str[i] == ' ' || i == len - 1) && word_start)
-		{
-			words[k] = (char *)malloc(sizeof(char) * (word_length + 1));
-			if (words[k] == NULL)
+			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+				;
+			j++;
+			w[wc] = (char *)malloc(sizeof(char) * j);
+			j--;
+			if (w[wc] == NULL)
 			{
-				for (j = 0; j < k; j++)
-					free(words[j]);
-				free(words);
+				for (k = 0; k < wc; j++)
+					free(w[k]);
+				free(w[n - 1]);
+				free(w);
 				return (NULL);
 			}
-			strncpy(words[k], str + i  - word_length, word_length);
-			words[k][word_length] = '\0';
-			word_start = 0;
-			k++;
+			for (l = 0; l < j; l++)
+				w[wc][l] = str[i + l];
+			w[wc][l] = '\0';
+			wc++;
+			i += j;
 		}
+		else
+			i++;
 	}
-	words[k] = NULL;
-	return (words);
+	return (w);
 }
