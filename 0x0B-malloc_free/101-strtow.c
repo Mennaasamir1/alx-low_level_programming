@@ -1,32 +1,34 @@
+#include <stdlib.h>
 #include "main.h"
 #include <string.h>
-#include <stdlib.h>
 /**
- * word_count - counts substrings
- * @str: pointer to string
+ * word_count - counts the words number
+ * @s: string
+ *
  * Return: word count
  */
-int word_count(char *str)
+int word_count(char *s)
 {
-	int i, count = 0;
+	int i, n = 0;
 
-	for (i = 0; str[i]; i++)
+	for (i = 0; s[i]; i++)
 	{
-		if (str[i] == ' ')
+		if (s[i] == ' ')
 		{
-			if (str[i + 1] !=  ' ' && str[i + 1] != '\0')
-				count++;
-			else if (i == 0)
-				count++;
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
+				n++;
 		}
+		else if (i == 0)
+			n++;
 	}
-	count++;
-	return (count);
+	n++;
+	return (n);
 }
 /**
- * **strtow -  splits a string into words
+ * **strtow - splits a string
  * @str: pointer to string
- * Return: pointer or null
+ *
+ * Return: pointer
  */
 char **strtow(char *str)
 {
@@ -38,7 +40,7 @@ char **strtow(char *str)
 	n = word_count(str);
 	if (n == 1)
 		return (NULL);
-	w = (char **)malloc(sizeof(char *) * n);
+	w = (char **)malloc(n * sizeof(char *));
 	if (w == NULL)
 		return (NULL);
 	w[n - 1] = NULL;
@@ -50,11 +52,11 @@ char **strtow(char *str)
 			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
 				;
 			j++;
-			w[wc] = (char *)malloc(sizeof(char) * j);
+			w[wc] = (char *)malloc(j * sizeof(char));
 			j--;
 			if (w[wc] == NULL)
 			{
-				for (k = 0; k < wc; j++)
+				for (k = 0; k < wc; k++)
 					free(w[k]);
 				free(w[n - 1]);
 				free(w);
