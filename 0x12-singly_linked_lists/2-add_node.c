@@ -17,11 +17,7 @@ list_t *add_node(list_t **head, const char *str)
 	ptr->str = s;
 	ptr->next = NULL;
 
-	if (ptr == NULL)
-	{
-		return (NULL);
-	}
-	else
+	if (ptr != NULL)
 	{
 		ptr->next = *head;
 		*head = ptr;
