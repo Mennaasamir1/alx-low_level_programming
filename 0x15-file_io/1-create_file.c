@@ -1,6 +1,23 @@
 #include "main.h"
 #include <string.h>
 /**
+ * _len - returns len
+ * @str: str
+ * Return: len
+ */
+int _len(char *str)
+{
+	int len = 0;
+
+	if (!str)
+		return (0);
+	while (*str++)
+	{
+		len++;
+	}
+	return (len);
+}
+/**
  * create_file - creates a file
  * @filename: file
  * @text_content: text
@@ -11,7 +28,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	ssize_t b = 0, length = strlen(text_content);
+	ssize_t b = 0, length = _len(text_content);
 
 	if (!filename)
 	{
