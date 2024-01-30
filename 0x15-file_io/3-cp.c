@@ -23,7 +23,7 @@ int main(int ac, char **av)
 	{
 		dprintf(STDERR_FILENO, NO_READ, av[1]), exit(98);
 	}
-	fd_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC | PERMIT);
+	fd_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMIT);
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, NO_WRITE, av[2]), exit(99);
@@ -45,7 +45,7 @@ int main(int ac, char **av)
 	}
 	if (fd_to)
 	{
-		dprintf(STDERR_FILENO, NO_CLOSE, fd_to), exit(100);
+		dprintf(STDERR_FILENO, NO_CLOSE, fd_from), exit(100);
 	}
 	return (EXIT_SUCCESS);
 
