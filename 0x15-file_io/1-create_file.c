@@ -1,3 +1,4 @@
+
 #include "main.h"
 #include <string.h>
 /**
@@ -26,7 +27,7 @@ int _len(char *str)
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	ssize_t letters, length = _len(text_content);
+	ssize_t letters = 0, length = _len(text_content);
 
 	if (!filename)
 	{
