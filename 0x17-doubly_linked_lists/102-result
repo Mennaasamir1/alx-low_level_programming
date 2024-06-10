@@ -1,1 +1,2 @@
-906609
+#!/usr/bin/python3
+print(906609, end='')

@@ -10,7 +10,7 @@ for i in range(100, 1000):
         if is_palindrome(number) and number > largest_palindrome:
             largest_palindrome = number
 print(largest_palindrome, end='')
-"""
+'''
 with open("102-result", "W") as file:
-    file.write(str(largest_palindrome))
-"""
+    file.write(str(largest_palindrome, end=''))
+'''
